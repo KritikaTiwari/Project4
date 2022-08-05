@@ -5,7 +5,7 @@ import pickle
 
 
 app = Flask(__name__)
-model = pickle.load(open('lineartitnic.pkl','rb')) 
+model = pickle.load(open('titanic.pkl','rb')) 
 
 
 @app.route('/')
@@ -23,7 +23,7 @@ def pr():
   
   prediction = model.predict([[exp,exp1,exp2,exp3,exp4,exp5]])
 
-  return render_template('index.html', prediction_text='Regression Model  has predicted is : {}'.format(prediction))
+  return render_template('index.html', prediction_text='Regression Model  has predicted survivors : {}'.format(prediction))
 
 
 if __name__ == "__main__":
